@@ -361,6 +361,17 @@ a {
     font-size: 0.95rem;
     color: #666;
 }
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
 
 /* --- Media Queries for Responsiveness --- */
 
@@ -382,95 +393,132 @@ a {
 }
 
 /* Mobile Devices */
+/* --- Mobile and Tablet (≤768px) --- */
 @media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .nav-links {
-        display: none; 
-    }
+  /* Navbar */
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+  .btn-quote { display: none; }
 
-    .btn-quote {
-        display: none; /* Hide quote button as it's redundant with hero buttons */
-    }
-    
-    .hero-section {
-        padding-top: 40px;
-        overflow: visible; 
-    }
-    
-    .hero-section::before {
-        content: none;
-    }
-    
-    .hero-content-wrapper {
-        flex-direction: column-reverse;
-        text-align: center;
-        min-height: auto;
-    }
+  /* Hero section */
+  .hero-content-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 0 15px;
+    min-height: auto;
+  }
+  .hero-text-area {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
+  .hero-text-area h1 {
+    font-size: 2rem;
+  }
+  .hero-text-area p {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-actions .btn {
+    width: 80%;
+    max-width: 280px;
+  }
 
-    .hero-text-area, .hero-image-area {
-        max-width: 100%;
-    }
+  /* Hero image */
+  .hero-image-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  @media (max-width: 768px) {
+  .hero-image {
+    position: relative;
+    width: 99%;          /* increase width */
+    max-width: 820px;    /* allow larger size */
+    max-height: 770px;   /* increase height */
+    margin: 0 auto;
+    display: block;
+  }
+}
 
-    .hero-text-area {
-        padding-bottom: 40px;
-    }
 
-    .hero-text-area h1 {
-        font-size: 2.2rem; /* Adjusted font size for mobile */
-    }
+  /* Compact rating + resume cards */
+  .rating-box, .online-resumes {
+    position: relative;
+    width: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .rating-score { font-size: 1.5rem; }
+  .rating-stars { font-size: 0.85rem; }
+  .rating-label { font-size: 0.75rem; }
 
-    .hero-text-area p {
-        max-width: 100%;
-        font-size: 0.95rem;
-    }
+  .online-resumes-icon {
+    width: 26px; height: 26px; font-size: 0.85rem;
+  }
+  .online-resumes-text .count { font-size: 1.1rem; }
+  .online-resumes-text .label { font-size: 0.75rem; }
 
-    .hero-actions {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center;
-        gap: 10px;
-    }
+  /* Features stacked */
+  .features-grid {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .section-title-main {
+    font-size: 1.5rem;
+  }
+}
 
-    .hero-actions .btn {
-        width: 80%; /* Make buttons wider for easier tapping */
-        max-width: 300px;
-    }
+/* --- Very Small Devices (≤500px) --- */
+@media (max-width: 530px) {
+  .hero-text-area h1 {
+    font-size: 1.6rem;
+  }
+  .hero-image {
+    width: 95%;
+    max-width: 600px;   /* a little bigger than before */
+    max-height: 415px;
+  }
+  .rating-box, .online-resumes {
+    padding: 5px 10px;
+    margin: 4px auto;
+  }
+  .rating-score { font-size: 1.2rem; }
+  .rating-stars { font-size: 0.75rem; }
+  .rating-label { font-size: 0.65rem; }
 
-    .hero-image-area {
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .hero-image {
-        position: static;
-        max-height: 300px; /* Adjusted image height */
-        max-width: 100%;
-        width: auto;
-    }
-    
-    .rating-box, .online-resumes {
-        position: static;
-        margin: 15px auto;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        width: fit-content;
-    }
-    
-    .features-section {
-        padding: 60px 0;
-    }
-
-    .features-grid {
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    .section-title-main {
-        font-size: 1.6rem;
-        margin-bottom: 40px;
-    }
+  .online-resumes-icon {
+    width: 22px; height: 22px; font-size: 0.75rem;
+  }
+  .online-resumes-text .count { font-size: 0.95rem; }
+  .online-resumes-text .label { font-size: 0.65rem; }
 }
