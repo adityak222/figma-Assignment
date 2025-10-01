@@ -1,0 +1,493 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Poppins as the base font for body text, paragraphs, etc. */
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff; /* Default background is white */
+}
+
+/* Heading Font Overrides (Figtree) */
+h1, h3, h4, .rating-score, .company-name {
+    font-family: 'Figtree', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+/* --- Navigation/Header Styling --- */
+.navbar {
+    padding: 15px 0; /* Sets 5px padding for top/bottom, 0 for left/right */
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Fixes for Scaling and Text Structure */
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.company-logo-img {
+    height: 25px; /* Scales the PNG logo */
+    width: auto;
+    margin-right: 8px;
+}
+
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-name {
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1; 
+    margin-left: 0;
+}
+
+.business-tagline {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #666;
+    line-height: 1;
+    margin-left: 0; 
+}
+
+.nav-links a {
+    margin-left: 25px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: #FA1239;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-quote {
+    background-color: #FA1239;
+    color: white;
+    border: none;
+}
+
+.btn-quote:hover {
+    background-color: #d11231;
+}
+
+/* --- Hero Section Styling --- */
+.hero-section {
+    background: #fef3f6; /* Light Pink Background */
+    padding: 80px 0 0; 
+    position: relative;
+    overflow: hidden; 
+}
+
+/* Pseudo-element draws the full-height pink background on the right */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; 
+    right: 0;
+    width: 50%;
+    height: calc(100% + 100px); 
+    background-color: #fef3f6; /* Light Pink Background */
+    z-index: 0; 
+}
+
+.hero-content-wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 600px; 
+}
+
+/* FINAL DESKTOP FIX: Ensures text background is fully white */
+.hero-text-area {
+    flex: 1;
+    max-width: 50%;
+    background-color:transparent;
+    z-index: 2; 
+
+    /* Extend white background visually to the screen edge */
+    /* Add space back to separate from image area */
+}
+
+.hero-text-area h1 {
+    font-size: 3.5rem;
+    font-weight: 800; 
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero-text-area .highlight {
+    color: #FA1239; 
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+}
+
+.hero-text-area p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 80%;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-package {
+    background-color: transparent;
+    color: #FA1239; 
+    border: 1px solid #FA1239; 
+    font-size: 0.9rem;
+}
+
+.btn-package:hover {
+    background-color: #fef3f6;
+    color: #d11231;
+    border-color: #d11231;
+}
+
+.btn-contact {
+    background-color: #FA1239; 
+    color: white;
+    border: 1px solid #FA1239; 
+    font-size: 0.9rem;
+}
+
+.btn-contact:hover {
+    background-color: #d11231;
+    border-color: #d11231;
+}
+
+.hero-image-area {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    min-height: 600px;
+    background-color: transparent;
+}
+
+.hero-image {
+    width: auto;
+    max-height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/* Rating Box Styling - Fixed for horizontal layout */
+.rating-box {
+    position: absolute;
+    bottom: 200px; 
+    left: -60px; 
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    z-index: 3;
+}
+
+.rating-score {
+    font-family: 'Figtree', sans-serif; 
+    font-size: 3.5rem; 
+    font-weight: 800;
+    color: #00A398; /* Placeholder Teal Color - UPDATE THIS WITH YOUR EXACT HEX CODE */
+    line-height: 1;
+}
+
+.rating-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rating-stars {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-bottom: 3px; 
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.rating-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Online Resumes Box Styling */
+.online-resumes {
+    position: absolute;
+    bottom: 50px; 
+    right: 50px; 
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3;
+}
+
+.online-resumes-icon {
+    background-color: #FA1239; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.online-resumes-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.online-resumes-text .count {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.online-resumes-text .label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* --- Features Section Styling --- */
+.features-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.section-title-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #FA1239; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #fef3f6;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.section-title-main {
+    font-size: 2rem;
+    font-weight: 700; 
+    color: #333;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.feature-card {
+    flex: 1;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+.card-icon-placeholder {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-icon-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.feature-card h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet and Smaller Desktop */
+@media (max-width: 1024px) {
+    .hero-text-area h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content-wrapper {
+        min-height: 500px;
+    }
+
+    .rating-box {
+        bottom: 150px;
+        left: 0;
+    }
+
+    .online-resumes {
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Reset desktop fixes for cleaner mobile view */
+    .hero-text-area {
+        margin-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: none; 
+    }
+
+    .btn-quote {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    /* Mobile: Ensure full background color is pink and remove desktop tricks */
+    .hero-section {
+        background: #fef3f6; 
+        padding-top: 50px;
+    }
+    
+    .hero-section::before {
+        content: none;
+    }
+    
+    .hero-content-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero-text-area, .hero-image-area {
+        max-width: 100%;
+    }
+
+    .hero-text-area {
+        padding-bottom: 40px;
+    }
+
+    .hero-text-area h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text-area p {
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-image-area {
+        min-height: 400px;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .hero-image {
+        position: static;
+        max-height: 350px;
+    }
+    
+    .rating-box, .online-resumes {
+        position: static;
+        margin: 10px auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .rating-box {
+        flex-direction: row; 
+    }
+    
+    .rating-details {
+        align-items: flex-start; 
+    }
+    
+    .features-grid {
+        flex-direction: column;
+    }
+    
+    .section-title-main {
+        font-size: 1.5rem;
+    }
+}
