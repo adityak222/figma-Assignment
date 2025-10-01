@@ -6,11 +6,10 @@
 }
 
 body {
-    /* Poppins as the base font for body text, paragraphs, etc. */
     font-family: 'Poppins', sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: #ffffff; /* Default background is white */
+    background-color: #ffffff;
 }
 
 /* Heading Font Overrides (Figtree) */
@@ -32,7 +31,7 @@ a {
 
 /* --- Navigation/Header Styling --- */
 .navbar {
-    padding: 15px 0; /* Sets 5px padding for top/bottom, 0 for left/right */
+    padding: 15px 0;
     background-color: white;
     border-bottom: 1px solid #eee;
     position: relative;
@@ -49,11 +48,11 @@ a {
 .logo {
     display: flex;
     align-items: center;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .company-logo-img {
-    height: 25px; /* Scales the PNG logo */
+    height: 35px;
     width: auto;
     margin-right: 8px;
 }
@@ -111,13 +110,12 @@ a {
 
 /* --- Hero Section Styling --- */
 .hero-section {
-    background: #fef3f6; /* Light Pink Background */
+    background: #fef3f6;
     padding: 80px 0 0; 
     position: relative;
     overflow: hidden; 
 }
 
-/* Pseudo-element draws the full-height pink background on the right */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -125,7 +123,7 @@ a {
     right: 0;
     width: 50%;
     height: calc(100% + 100px); 
-    background-color: #fef3f6; /* Light Pink Background */
+    background-color: #fef3f6;
     z-index: 0; 
 }
 
@@ -135,15 +133,11 @@ a {
     min-height: 600px; 
 }
 
-/* FINAL DESKTOP FIX: Ensures text background is fully white */
 .hero-text-area {
     flex: 1;
     max-width: 50%;
     background-color:transparent;
     z-index: 2; 
-
-    /* Extend white background visually to the screen edge */
-    /* Add space back to separate from image area */
 }
 
 .hero-text-area h1 {
@@ -173,11 +167,14 @@ a {
     gap: 15px;
 }
 
+.btn-package, .btn-contact {
+    font-size: 0.9rem;
+    border: 1px solid #FA1239;
+}
+
 .btn-package {
     background-color: transparent;
     color: #FA1239; 
-    border: 1px solid #FA1239; 
-    font-size: 0.9rem;
 }
 
 .btn-package:hover {
@@ -189,8 +186,6 @@ a {
 .btn-contact {
     background-color: #FA1239; 
     color: white;
-    border: 1px solid #FA1239; 
-    font-size: 0.9rem;
 }
 
 .btn-contact:hover {
@@ -218,26 +213,28 @@ a {
     z-index: 1;
 }
 
-/* Rating Box Styling - Fixed for horizontal layout */
-.rating-box {
+/* Floating Boxes Styling */
+.rating-box, .online-resumes {
     position: absolute;
-    bottom: 200px; 
-    left: -60px; 
     background-color: white;
-    padding: 15px 25px;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
-    gap: 15px; 
     z-index: 3;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.rating-box {
+    bottom: 200px; 
+    left: -60px; 
+    padding: 15px 25px;
+    gap: 15px; 
 }
 
 .rating-score {
-    font-family: 'Figtree', sans-serif; 
     font-size: 3.5rem; 
     font-weight: 800;
-    color: #00A398; /* Placeholder Teal Color - UPDATE THIS WITH YOUR EXACT HEX CODE */
+    color: #00A398;
     line-height: 1;
 }
 
@@ -262,19 +259,11 @@ a {
     white-space: nowrap;
 }
 
-/* Online Resumes Box Styling */
 .online-resumes {
-    position: absolute;
     bottom: 50px; 
     right: 50px; 
-    background-color: white;
     padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
     gap: 10px;
-    z-index: 3;
 }
 
 .online-resumes-icon {
@@ -380,51 +369,36 @@ a {
     .hero-text-area h1 {
         font-size: 3rem;
     }
-    
     .hero-content-wrapper {
         min-height: 500px;
     }
-
     .rating-box {
         bottom: 150px;
         left: 0;
     }
-
     .online-resumes {
         right: 20px;
     }
 }
 
+/* Mobile Devices */
 @media (max-width: 768px) {
-    /* Reset desktop fixes for cleaner mobile view */
-    .hero-text-area {
-        margin-left: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
     .navbar .container {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
     }
     
-    .logo {
-        margin-bottom: 10px;
-    }
-
     .nav-links {
         display: none; 
     }
 
     .btn-quote {
-        margin-left: 0;
-        width: 100%;
+        display: none; /* Hide quote button as it's redundant with hero buttons */
     }
     
-    /* Mobile: Ensure full background color is pink and remove desktop tricks */
     .hero-section {
-        background: #fef3f6; 
-        padding-top: 50px;
+        padding-top: 40px;
+        overflow: visible; 
     }
     
     .hero-section::before {
@@ -446,48 +420,57 @@ a {
     }
 
     .hero-text-area h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem; /* Adjusted font size for mobile */
     }
 
     .hero-text-area p {
         max-width: 100%;
+        font-size: 0.95rem;
     }
 
     .hero-actions {
-        justify-content: center;
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        width: 80%; /* Make buttons wider for easier tapping */
+        max-width: 300px;
     }
 
     .hero-image-area {
-        min-height: 400px;
-        justify-content: center;
-        width: 100%;
         margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .hero-image {
         position: static;
-        max-height: 350px;
+        max-height: 300px; /* Adjusted image height */
+        max-width: 100%;
+        width: auto;
     }
     
     .rating-box, .online-resumes {
         position: static;
-        margin: 10px auto;
+        margin: 15px auto;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: fit-content;
     }
     
-    .rating-box {
-        flex-direction: row; 
+    .features-section {
+        padding: 60px 0;
     }
-    
-    .rating-details {
-        align-items: flex-start; 
-    }
-    
+
     .features-grid {
         flex-direction: column;
+        gap: 40px;
     }
     
     .section-title-main {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        margin-bottom: 40px;
     }
 }
