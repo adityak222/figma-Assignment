@@ -91,11 +91,16 @@ a {
 
 .btn {
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 50px;
     font-weight: 600;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    box-shadow:
+  0.5px 0.5px #f1516c,
+  -0.5px 0 5px #f1516c;
+
+    
 }
 
 .btn-quote {
@@ -141,11 +146,11 @@ a {
 }
 
 .hero-text-area h1 {
-    font-size: 3.5rem;
+    font-size: 64px;
     font-weight: 800; 
     line-height: 1.1;
     margin-bottom: 20px;
-    color: #333;
+    color: #000000;
 }
 
 .hero-text-area .highlight {
@@ -222,6 +227,7 @@ a {
     align-items: center;
     z-index: 3;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.96);
 }
 
 .rating-box {
@@ -229,6 +235,7 @@ a {
     left: -60px; 
     padding: 15px 25px;
     gap: 15px; 
+    background: rgba(255, 255, 255, 0.92);
 }
 
 .rating-score {
@@ -255,7 +262,7 @@ a {
 .rating-label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #333;
+    color: #000000;
     white-space: nowrap;
 }
 
@@ -301,26 +308,33 @@ a {
 }
 
 .section-title-label {
-    font-size: 0.8rem;
+    font-size: 18px;
     font-weight: 600;
-    color: #FA1239; 
+    color:#000000; 
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
     padding: 5px 15px;
     background-color: #fef3f6;
-    border-radius: 50px;
+    border-radius: 20px;
     margin-bottom: 10px;
 }
 
 .section-title-main {
-    font-size: 2rem;
-    font-weight: 700; 
-    color: #333;
+    color: #000000;
     margin-bottom: 50px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+
 }
 
 .features-grid {
@@ -330,10 +344,18 @@ a {
 }
 
 .feature-card {
+    background-color: white;
+    text-align: left;
+    padding: 20px 20px;
+    border-radius: 20px;
     flex: 1;
-    text-align: center;
-    padding: 30px 20px;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow:
+  0.5px 0.5px rgb(202, 201, 201),
+  -0.5px 0 5px rgb(202, 201, 201);
 }
 
 .card-icon-placeholder {
@@ -351,15 +373,14 @@ a {
 }
 
 .feature-card h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #333;
+    color: #000000;
     margin-bottom: 10px;
 }
 
 .feature-card p {
-    font-size: 0.95rem;
-    color: #666;
+    font-size: 18px;
+    color: #000000;
+    font-weight: 200;
 }
 .menu-toggle {
   display: none;
@@ -371,6 +392,15 @@ a {
   font-size: 2rem;
   cursor: pointer;
   user-select: none;
+}
+.card1{
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
 }
 
 /* --- Media Queries for Responsiveness --- */
